@@ -28,28 +28,37 @@
 
 		<!-- Main -->
 		<div id="main">
-			<header class="major container medium">
-				<h2>We conduct experiments that
-					<br />
-					may or may not seriously
-					<br />
-					break the universe</h2>
-			</header>
 			<div id="filelist">
 				<script type="text/javascript">
 					$.getJSON( "filelink.json", function( data ) {
 					  var items = [];
+					  var len = Object.keys(data).length;
+					  var now = 0
+					  while (now < len) {
+					    now++;
+						$("header").append("<div class='file' id='"+ now +"'></div>")
+					  }
 					  $.each( data, function( key, val ) {
-						items.push( "<li id='" + key + "'>" + val + "</li>" );
+						  $.each(val, function( everykey, everyval ) {
+							  if (everykey=="name"){
+						  		$("<pre class='filename' id='" + everykey + "' >          "+everyval+"<br /></pre>").appendTo("div#"+key)				
+								//items.push( "<li id='" + key + "' class='" + "filelink" +"' >" + everyval + "</li>" );
+								}
+							  else{
+								$("<a class='filelink' target='_blank' href='" + everyval + "' id='" + everykey + "' >"+everykey+"<br></pre>").appendTo("div#"+key)
+							  }
+						  })
 					  });
 					 
 					  $( "<ul/>", {
-						"class": "my-new-list",
+						"class": "filelist",
 						html: items.join( "" )
-					  }).appendTo( "body" );
+					  }).appendTo( "header" );
 					});
 				</script>
 			</div>
+			<header class="major container medium">
+			</header>
 		</div>
 
 		<!-- Footer -->

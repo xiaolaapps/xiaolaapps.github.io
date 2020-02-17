@@ -7,6 +7,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -136,7 +137,7 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4, h5, h6, .filelink {
 		color: #5b5b5b;
 		font-weight: 700;
 		letter-spacing: 0.125em;
@@ -3119,7 +3120,7 @@ input, select, textarea {
 			}
 
 				header.major br {
-					display: none;
+					
 				}
 
 				header.major p {
@@ -3300,3 +3301,30 @@ input, select, textarea {
 				}
 
 	}
+div.file{
+	background: #d3f17c;
+	opacity:0.5;
+	margin:20px;
+	border-radius: 25px;
+	border: 0px solid ;
+	height: 100%;
+	width: 100%;
+　　 transition: 1s;
+}
+div.file:hover{
+	height:100.5%;
+	width: 100.5%;
+	opacity:0.7;
+	box-shadow: 0 0 25px rgba(186, 204, 207, 0.7)
+}
+pre{
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+a.filelink{
+	opacity: 1;
+}
+a.filelink:hover{
+	
+}
